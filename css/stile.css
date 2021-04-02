@@ -1,0 +1,37 @@
+  .form-check-input,
+  .form-check-label input {
+    /* transform: scale(1.5); */
+  }
+
+  .badge-lg {
+    font-size: 100%
+  }
+
+  .card>.table,
+  .card>form>.table {
+    margin-bottom: 0;
+  }
+
+  .min {
+    width: 1%;
+    white-space: nowrap;
+  }
+
+  .card-body .row:last-child>p {
+    margin-bottom: 0;
+  }
+
+  .invalid .form-check-label {
+    border-color: #dc3545;
+  }
+.my-auto{
+	margin-top: auto;
+margin-bottom: auto;
+}
+.icon-home{
+	color: white;
+    font-size: larger;
+}
+.color-black{
+	color:black;
+}
