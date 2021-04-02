@@ -1,14 +1,24 @@
  <?php
 
 function getListaWorkPool() {
-require 'config/ws.php';
-            $client = new SoapClient($urlErp);
+		require 'config/ws.php';
+		/*		
+        $client = new SoapClient($urlErp);
         //init context
         $CContext["codeLang"] = $codeLang;
         $CContext["codeUser"] = $codeUser;
         $CContext["password"] = $password;
         $CContext["poolAlias"] = $poolAlias;
         $CContext["requestConfig"] = $requestConfig;
+		*/
+		//SAGE 11
+		$optionsAuth = Array ('login' => $codeUser,'password' => $password);
+		$client = new SoapClient($urlErp,$optionsAuth);
+        //init context
+        $CContext["codeLang"] = $codeLang;
+        $CContext["poolAlias"] = $poolAlias;
+        $CContext["requestConfig"] = $requestConfig;
+		
         //name method
         $subprog = $metodo_lista_workpool;
         $xmlInput = '<PARAM>

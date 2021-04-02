@@ -1,15 +1,23 @@
  <?php
 
 function getVerificaTelaio($telaio,$macchina) {
-require 'config/ws.php';
-       
+		require 'config/ws.php';
+		/*
         $client = new SoapClient($urlErp);
         //init context
         $CContext["codeLang"] = $codeLang;
         $CContext["codeUser"] = $codeUser;
         $CContext["password"] = $password;
         $CContext["poolAlias"] = $poolAlias;
+        $CContext["requestConfig"] = $requestConfig;*/
+		//SAGE 11
+		$optionsAuth = Array ('login' => $codeUser,'password' => $password);
+		$client = new SoapClient($urlErp,$optionsAuth);
+        //init context
+        $CContext["codeLang"] = $codeLang;
+        $CContext["poolAlias"] = $poolAlias;
         $CContext["requestConfig"] = $requestConfig;
+		
 		//<FLD NAME=\"YUSER\">" . $userFornitore . "</FLD>
         //<FLD NAME=\"YPASS\">" . $passFornitore . "</FLD>
         //name method

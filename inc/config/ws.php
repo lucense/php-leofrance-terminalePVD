@@ -1,5 +1,7 @@
 <?php
-$urlErp='http://192.168.1.200:28880/adxwsvc/services/CAdxWebServiceXmlCC?wsdl';
+//$urlErp='http://192.168.1.200:28880/adxwsvc/services/CAdxWebServiceXmlCC?wsdl';
+$urlErp='http://192.168.1.180:8124/soap-wsdl/syracuse/collaboration/syracuse/CAdxWebServiceXmlCC?wsdl';
+
 $codeLang='ITA';
 $codeUser='ws01';
 $password='8LcM8';

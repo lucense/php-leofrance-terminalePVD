@@ -1,8 +1,7 @@
  <?php
 function getInserisciWorkPool($userFornitore, $passFornitore,$reparto,$macchina,$programma,$telai) {
-	file_put_contents("log.txt","init getInserisciWork Pool" . PHP_EOL, FILE_APPEND);
-
-	require 'config/ws.php';
+		require 'config/ws.php';
+		/*
         $client = new SoapClient($urlErp);
         //init context
         $CContext["codeLang"] = $codeLang;
@@ -10,6 +9,15 @@ function getInserisciWorkPool($userFornitore, $passFornitore,$reparto,$macchina,
         $CContext["password"] = $password;
         $CContext["poolAlias"] = $poolAlias;
         $CContext["requestConfig"] = $requestConfig;
+		*/
+		//SAGE 11
+		$optionsAuth = Array ('login' => $codeUser,'password' => $password);
+		$client = new SoapClient($urlErp,$optionsAuth);
+        //init context
+        $CContext["codeLang"] = $codeLang;
+        $CContext["poolAlias"] = $poolAlias;
+        $CContext["requestConfig"] = $requestConfig;
+		
         //name method
 	//<FLD NAME=\"YUSER\">" . $userFornitore . "</FLD>
         //<FLD NAME=\"YPASS\">" . $passFornitore . "</FLD>
@@ -29,12 +37,13 @@ function getInserisciWorkPool($userFornitore, $passFornitore,$reparto,$macchina,
                  </PARAM>";
 
         $result = $client->run($CContext, $subprog, $xmlInput);     
+		/*
 		file_put_contents("log.txt",$xmlInput . PHP_EOL, FILE_APPEND);
 		file_put_contents("log.txt",serialize($CContext).PHP_EOL, FILE_APPEND);
 		file_put_contents("log.txt",$subprog. PHP_EOL, FILE_APPEND);
 		file_put_contents("log.txt",serialize($result) . PHP_EOL, FILE_APPEND);
 		file_put_contents("log.txt",$result->resultXml . PHP_EOL, FILE_APPEND);
-
+		*/
 
         $xml = simplexml_load_string($result->resultXml);
         $stato = 0;
