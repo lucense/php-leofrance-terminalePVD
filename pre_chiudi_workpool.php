@@ -20,14 +20,16 @@ if (strstr($_SESSION['lista_telai'],$telaio)) {
 	if ($telaio!=""){
 	
 				$risultato=getVerificaTelaio($telaio,$_SESSION['macchina']);
-				if ($risultato==1){
+				//if ($risultato==1){
+				if ($risultato=="NOPRES"){
 						?>
 						<div class="alert alert-warning" role="alert">
 							ATTENZIONE Telaio Non valido 
 						</div>							
 						<?php
 				}
-				if ($risultato==2){
+				//if ($risultato==2){
+				if ($risultato=="PIAN"){
 						?>
 						<div class="alert alert-warning" role="alert">
 							ATTENZIONE Telaio Non disponibile, gia presente in un altro workpool 
