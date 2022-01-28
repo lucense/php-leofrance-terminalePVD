@@ -71,8 +71,8 @@ function getVerificaTelaio($telaio,$macchina) {
         }
 		
 		
-		if ($yres==0)
-			$yres="";
+		/*if ($yres==0)
+			$yres="";*/
 	
 		
 		//echo "---".$yres."---";
